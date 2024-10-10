@@ -1,0 +1,66 @@
+TUGAS 1
+print("=============Selamat datang di Segitiga Detektor=============")
+def jenis_segitiga(a, b, c):
+  if a == b == c:
+    return "Segitiga Sama Sisi"
+  elif a == b or a == c or b == c:
+    return "Segitiga Sama Kaki"
+  elif a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2:
+    return "Segitiga Siku-Siku"
+  else:
+    return "Segitiga Sembarang"
+
+# Input panjang sisi segitiga
+a = int(input("Isi sisi a: "))
+b = int(input("Isi sisi b: "))
+c = int(input("Isi sisi c: "))
+
+# Panggil fungsi untuk menentukan jenis segitiga
+jenis = jenis_segitiga(a, b, c)
+
+# Cetak hasil
+print("Jenis segitiga:", jenis)
+print("===============Terima kasih================")
+
+TUGAS 2
+
+import math
+
+print("=====Selamat Datang di Program Mencari Akar Persamaan Kuadrat dan Determinan=====")
+
+# Meminta input dari user untuk nilai a, b, dan c
+a = float(input("Masukkan nilai A: "))
+b = float(input("Masukkan nilai B: "))
+c = float(input("Masukkan nilai C: "))
+
+# Mengecek apakah nilai a bukan nol
+if a == 0:
+    print("Persamaan bukan persamaan kuadrat, karena nilai A = 0")
+else:
+    # Menghitung determinan (delta)
+    determinan = b**2 - 4*a*c
+    print(f"Persamaan kuadrat {a}x^2 + {b}x + {c}")
+    print(f"Determinannya = {determinan}")
+
+    # Mengecek jenis akar berdasarkan nilai determinan
+    if determinan > 0:
+        # Jika determinan positif, ada dua akar real berbeda
+        akar1 = (-b + math.sqrt(determinan)) / (2*a)
+        akar2 = (-b - math.sqrt(determinan)) / (2*a)
+        print("Memiliki Akar Berbeda")
+        print(f"Akar x1 = {akar1}")
+        print(f"Akar x2 = {akar2}")
+    elif determinan == 0:
+        # Jika determinan nol, ada satu akar kembar
+        akar = -b / (2*a)
+        print("Merupakan Akar Kembar")
+        print(f"Akar = {akar}")
+    else:
+        # Jika determinan negatif, ada dua akar imajiner
+        real_part = -b / (2*a)
+        imag_part = math.sqrt(-determinan) / (2*a)
+        print("Merupakan Akar Imajiner")
+        print(f"Akar x1 = {real_part} + {imag_part}i")
+        print(f"Akar x2 = {real_part} - {imag_part}i")
+
+print("=====Program Selesai=====")
